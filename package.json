@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/main/index.ts",
+    "dev": "sh scripts/dev.sh",
     "test": "jest",
-    "test:unit": "jest --watch"
+    "test:unit": "sh scripts/testUnit.sh"
   },
   "keywords": [],
   "author": "Rafael Gonçalves <rafael.goncanna@gmail.com>",
