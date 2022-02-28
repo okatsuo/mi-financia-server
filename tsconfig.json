@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES2021",
+    "lib": [
+      "ES2021",
+      "esnext.asynciterable"
+    ],
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   }
 }
