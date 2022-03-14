@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "sh scripts/dev.sh",
     "test": "jest --passWithNoTests",
-    "test:unit": "sh scripts/testUnit.sh",
-    "prepare": "husky install"
+    "test:unit": "sh scripts/testUnit.sh"
   },
   "keywords": [],
   "author": "Rafael Gonçalves <rafael.goncanna@gmail.com>",

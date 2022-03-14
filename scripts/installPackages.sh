@@ -1,2 +1,8 @@
+#!/bash/bin
+
 npm install
-npm run prepare
+
+if [ ! -d .husky/_ ]
+then
+    npx husky install
+fi
