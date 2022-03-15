@@ -1,7 +1,7 @@
-import { Resolver, Query, Arg, Mutation } from 'type-graphql'
-import { UserInput } from '../inputs'
-import { getUserByEmailController, getUserListController, userCreateController } from '../main/factory'
-import { UserSchema } from '../schemas'
+import { Arg, Mutation, Query, Resolver } from 'type-graphql'
+import { getUserByEmailController, getUserListController, userCreateController } from '../../factory'
+import { UserResolverInput } from './userInput'
+import { UserSchema } from './userSchema'
 
 @Resolver()
 export class UserResolver {
@@ -19,7 +19,7 @@ export class UserResolver {
 
   @Mutation(() => UserSchema)
   async createUser (
-    @Arg('newUser') newUser: UserInput
+    @Arg('newUser') newUser: UserResolverInput
   ): Promise<UserSchema> {
     return userCreateController.exec(newUser)
   }
