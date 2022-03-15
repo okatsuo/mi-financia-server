@@ -1,5 +1,5 @@
-import { GetUsersRepository } from '../../repository/contracts'
-import { UserSchema } from '../../schemas'
+import { GetUsersRepository } from '../../../infra/repository/contracts'
+import { UserSchema } from '../../../main/graphql/schemas'
 import { Controller } from '../contracts'
 
 export class GetUserListController implements Controller {

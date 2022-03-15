@@ -1,6 +1,6 @@
-import { Resolver, Query, Arg, Mutation } from 'type-graphql'
+import { Arg, Mutation, Query, Resolver } from 'type-graphql'
+import { getUserByEmailController, getUserListController, userCreateController } from '../../factory'
 import { UserInput } from '../inputs'
-import { getUserByEmailController, getUserListController, userCreateController } from '../main/factory'
 import { UserSchema } from '../schemas'
 
 @Resolver()

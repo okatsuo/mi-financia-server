@@ -1,7 +1,7 @@
-import { UserInput } from '../../inputs'
-import { users } from '../fake-db'
-import { UserSchema } from '../../schemas'
+import { UserInput } from '../../../main/graphql/inputs'
+import { UserSchema } from '../../../main/graphql/schemas'
 import { CreateUserRepository, GetUserByEmailRepository, GetUsersRepository } from '../contracts'
+import { users } from '../fake-db'
 
 export class UserRepository implements CreateUserRepository, GetUsersRepository, GetUserByEmailRepository {
   create = (data: UserInput): UserSchema => {

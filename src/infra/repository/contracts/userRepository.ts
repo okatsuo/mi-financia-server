@@ -1,5 +1,5 @@
-import { UserInput } from '../../inputs'
-import { UserSchema } from '../../schemas'
+import { UserInput } from '../../../main/graphql/inputs'
+import { UserSchema } from '../../../main/graphql/schemas'
 
 export type CreateUserRepository = {
   create: (data: UserInput) => UserSchema

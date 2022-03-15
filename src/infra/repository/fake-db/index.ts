@@ -1,4 +1,4 @@
-import { UserSchema } from '../../schemas'
+import { UserSchema } from '../../../main/graphql/schemas'
 
 export const users: UserSchema[] = [{
   id: '0',
