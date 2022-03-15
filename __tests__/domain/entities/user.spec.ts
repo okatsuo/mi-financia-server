@@ -18,6 +18,6 @@ describe('User domain model', () => {
     const userInput: UserInput = { email: 'valid_mail@mail.com', password: 'valid_password', username: 'valid_username' }
     const user = new User(userInput)
     expect(user).toHaveProperty('id')
-    expect(user).toHaveProperty('createdAt')
+    expect(user).toHaveProperty('created_at')
   })
 })
