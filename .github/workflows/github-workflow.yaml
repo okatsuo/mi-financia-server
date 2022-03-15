@@ -21,5 +21,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Check code lint
+        run: npx eslint 'src/**' --fix
+
       - name: Run the tests
         run: npm test
