@@ -1,12 +1,12 @@
+import { ApolloServer } from 'apollo-server'
 import 'reflect-metadata'
 import { buildSchema } from 'type-graphql'
-import { ApolloServer } from 'apollo-server'
-import { UserResolver } from '../resolvers'
+import { UserResolver } from './graphql'
 
-const PORT = process.env.PORT ?? 4000
+const port = process.env.PORT ?? 4000
 
-void (
-  async (): Promise<void> => {
+class App {
+  static start = async (): Promise<void> => {
     const schema = await buildSchema({
       resolvers: [UserResolver]
     })
@@ -15,7 +15,9 @@ void (
       schema
     })
 
-    const { url } = await server.listen(PORT)
+    const { url } = await server.listen(port)
     console.log(`Hello baby ~ Server running at ${url}`)
   }
-)()
+}
+
+App.start().catch(console.error)

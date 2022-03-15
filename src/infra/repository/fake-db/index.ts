@@ -1,12 +1,20 @@
-import { UserSchema } from '../../../main/graphql/schemas'
+import { User } from '../../../domain/entities'
+import { UserStatus } from '../../../domain/enums/userStatus'
+import { DateHelper, RandomId } from '../../../helpers'
 
-export const users: UserSchema[] = [{
-  id: '0',
-  name: 'Katsuo',
-  email: 'lovejingwen'
+export const users: User[] = [{
+  id: RandomId.generate(),
+  username: 'Katsuo',
+  email: 'lovejingwen',
+  password: 'hashed_password',
+  status: UserStatus.notVerified,
+  createdAt: DateHelper.now()
 },
 {
-  id: '1',
-  name: 'Jingwen',
-  email: 'lovekatsuo'
+  id: RandomId.generate(),
+  username: 'Jingwen',
+  email: 'lovekatsuo',
+  password: 'hashed_password',
+  status: UserStatus.verified,
+  createdAt: DateHelper.now()
 }]
