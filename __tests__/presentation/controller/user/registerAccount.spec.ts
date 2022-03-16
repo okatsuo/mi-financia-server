@@ -2,7 +2,7 @@ import { User, UserInput } from '../../../../src/domain/entities'
 import { UserStatus } from '../../../../src/domain/enums/userStatus'
 import { RegisterAccount } from '../../../../src/domain/use-cases/register-account'
 import { DateHelper } from '../../../../src/helpers'
-import { RegisterAccountController } from '../../../../src/presentation/controller/user'
+import { RegisterAccountController } from '../../../../src/presentation/controllers/user'
 
 const now = DateHelper.now()
 

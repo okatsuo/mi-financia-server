@@ -1,6 +1,6 @@
 import { User } from '../../../domain/entities'
 import { GetUserByEmailRepository } from '../../../infra/repository/contracts'
-import { Controller } from '../contracts'
+import { Controller } from '../../contracts'
 
 export class GetUserByEmailController implements Controller {
   constructor (
