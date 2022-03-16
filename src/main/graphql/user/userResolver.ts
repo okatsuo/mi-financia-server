@@ -21,6 +21,6 @@ export class UserResolver {
   async createUser (
     @Arg('newUser') newUser: UserResolverInput
   ): Promise<UserSchema> {
-    return userCreateController.exec(newUser)
+    return await userCreateController.exec(newUser)
   }
 }

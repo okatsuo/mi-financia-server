@@ -1,4 +1,4 @@
 import { UserRepository } from '../../infra/repository/user'
-import { CreateUserController } from '../../presentation/controller/user'
+import { RegisterAccountController } from '../../presentation/controller/user'
 
-export const userCreateController = new CreateUserController(new UserRepository())
+export const userCreateController = new RegisterAccountController(new UserRepository())

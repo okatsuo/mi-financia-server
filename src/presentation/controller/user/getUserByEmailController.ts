@@ -1,5 +1,5 @@
+import { User } from '../../../domain/entities'
 import { GetUserByEmailRepository } from '../../../infra/repository/contracts'
-import { UserSchema } from '../../../main/graphql/schemas'
 import { Controller } from '../contracts'
 
 export class GetUserByEmailController implements Controller {
@@ -7,7 +7,7 @@ export class GetUserByEmailController implements Controller {
     private readonly userRepository: GetUserByEmailRepository
   ) { }
 
-  exec = (email: string): UserSchema | undefined => {
+  exec = (email: string): User | undefined => {
     return this.userRepository.getUserByEmail(email)
   }
 }

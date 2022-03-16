@@ -1,5 +1,5 @@
+import { User } from '../../../domain/entities'
 import { GetUsersRepository } from '../../../infra/repository/contracts'
-import { UserSchema } from '../../../main/graphql/schemas'
 import { Controller } from '../contracts'
 
 export class GetUserListController implements Controller {
@@ -7,7 +7,7 @@ export class GetUserListController implements Controller {
     private readonly userRepository: GetUsersRepository
   ) { }
 
-  exec = (): UserSchema[] => {
+  exec = (): User[] => {
     return this.userRepository.getUsers()
   }
 }
