@@ -1,3 +1,5 @@
-export type Controller<I = any, O = any> = {
-  exec: (data: I) => O
+import { Response } from './http'
+
+export type Controller<I = any> = {
+  exec: (data: I) => Promise<Response>
 }
