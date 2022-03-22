@@ -7,14 +7,14 @@ import { UserSchema } from './userSchema'
 export class UserResolver {
   @Query(() => [UserSchema])
   async getUsers (): Promise<UserSchema[]> {
-    return getUserListController.exec()
+    return await getUserListController.exec()
   }
 
   @Query(() => UserSchema, { nullable: true })
   async getUserByEmail (
     @Arg('email') email: string
   ): Promise<UserSchema | undefined> {
-    return getUserByEmailController.exec(email)
+    return await getUserByEmailController.exec(email)
   }
 
   @Mutation(() => UserSchema)
