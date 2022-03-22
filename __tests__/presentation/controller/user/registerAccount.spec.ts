@@ -2,7 +2,7 @@ import { User, UserInput } from '../../../../src/domain/entities'
 import { UserStatus } from '../../../../src/domain/enums/userStatus'
 import { RegisterAccount } from '../../../../src/domain/use-cases/register-account'
 import { DateHelper } from '../../../../src/helpers'
-import { RequestError } from '../../../../src/main/resources'
+import { IRequestError } from '../../../../src/main/resources'
 import { IEmailValidator } from '../../../../src/presentation/contracts'
 import { RegisterAccountController } from '../../../../src/presentation/controllers/user'
 
@@ -61,7 +61,7 @@ describe('Register Account Controller', () => {
     const { sut, emailValidatorStub } = makeSut()
     const fakeUser: UserInput = { email: 'valid_mail', password: 'valid_password', username: 'valid_username' }
     jest.spyOn(emailValidatorStub, 'validate').mockImplementationOnce(() => false)
-    const error = await sut.exec(fakeUser) as RequestError
+    const error = await sut.exec(fakeUser) as IRequestError
     expect(error.code).toBe(1)
   })
 
