@@ -9,7 +9,7 @@ export class RegisterAccountDb implements RegisterAccount {
   ) { }
 
   async register (data: UserInput): Promise<User> {
-    const hashedPassword = this.cryptography.encrypt(data.password)
+    const hashedPassword = await this.cryptography.encrypt(data.password)
     const newUser = new User({ ...data, password: hashedPassword })
     await this.userRepository.register(newUser)
     return newUser

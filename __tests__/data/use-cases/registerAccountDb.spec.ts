@@ -11,7 +11,7 @@ jest.mock('../../../src/domain/entities', () => ({
 
 const makeCryptographyStub = (): ICryptography => {
   class CryptographyStub implements ICryptography {
-    encrypt = (value: string): string => 'hashed_password'
+    encrypt = async (value: string): Promise<string> => 'hashed_password'
   }
   return new CryptographyStub()
 }
