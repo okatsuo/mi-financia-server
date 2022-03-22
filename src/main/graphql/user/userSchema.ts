@@ -1,9 +1,9 @@
 import { Field, ObjectType } from 'type-graphql'
-import { User } from '../../../domain/entities'
+import { User as UserModel } from '../../../domain/entities'
 import { UserStatus } from '../../../domain/enums/userStatus'
 
 @ObjectType()
-export class UserSchema implements Omit<User, 'password'> {
+export default class User implements Omit<UserModel, 'password'> {
   @Field()
   id: string
 
