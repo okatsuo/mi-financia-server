@@ -1,5 +1,5 @@
-import { User, UserInput } from '../../domain/entities'
+import { User } from '../../domain/entities'
 
 export type IRegisterAccountRepository = {
-  register: (data: UserInput) => Promise<User>
+  register: (data: User) => Promise<User>
 }
