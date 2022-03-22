@@ -1,5 +1,5 @@
 import { User, UserInput } from '../../../domain/entities'
-import { RegisterAccount } from '../../../domain/use-cases/register-account'
+import { RegisterAccount } from '../../../domain/use-cases'
 import { errors } from '../../../main/resources'
 import { Controller, IEmailValidator } from '../../contracts'
 import { Response } from '../../contracts/http'
