@@ -1,3 +1,3 @@
 export type ICryptography = {
-  encrypt: (value: string) => string
+  encrypt: (value: string) => Promise<string>
 }
