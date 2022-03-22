@@ -1,9 +1,9 @@
-import { IRegisterAccountRepository } from '../../../data/contracts'
+import { IGetUserByEmailRepository, IRegisterAccountRepository } from '../../../data/contracts'
 import { User, UserInput } from '../../../domain/entities'
-import { CreateUserRepository, GetUserByEmailRepository, GetUsersRepository } from '../contracts'
+import { CreateUserRepository, GetUsersRepository } from '../contracts'
 import { users } from '../fake-db'
 
-export class UserRepository implements CreateUserRepository, GetUsersRepository, GetUserByEmailRepository, IRegisterAccountRepository {
+export class UserRepository implements CreateUserRepository, GetUsersRepository, IGetUserByEmailRepository, IRegisterAccountRepository {
   create = (data: UserInput): User => {
     const newUser: User = new User(data)
     users.push(newUser)
@@ -14,8 +14,9 @@ export class UserRepository implements CreateUserRepository, GetUsersRepository,
     return users
   }
 
-  getUserByEmail = (email: string): User | undefined => {
-    return users.find((user) => user.email === email)
+  getUserByEmail = async (email: string): Promise<User | null> => {
+    const user = users.find((user) => user.email === email)
+    return user ?? null
   }
 
   register = async (data: User): Promise<User> => {

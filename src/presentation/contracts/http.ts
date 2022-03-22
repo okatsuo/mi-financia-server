@@ -1,3 +1,3 @@
-import { RequestError } from '../../main/resources'
+import { IRequestError } from '../errors'
 
-export type Response<T = any> = T | RequestError
+export type Response<T = any> = Promise<T | IRequestError>

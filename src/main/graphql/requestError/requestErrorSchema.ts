@@ -1,5 +1,5 @@
 import { Field, ObjectType } from 'type-graphql'
-import { IRequestError } from '../../resources'
+import { IRequestError } from '../../../presentation/errors'
 
 @ObjectType()
 export default class RequestError implements IRequestError {
